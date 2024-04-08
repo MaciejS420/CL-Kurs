@@ -5,7 +5,11 @@ rnd = randint(1, 10)
 
 while not guessed:
     str_num = input("Enter number:")
-    num = int(str_num)
+    try:
+        num = int(str_num)
+    except ValueError:
+        print("please enter a number")
+        continue
     if num == rnd:
         print("Great!")
         guessed = True
